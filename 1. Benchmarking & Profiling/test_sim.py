@@ -9,6 +9,7 @@ def test_evolve(benchmark):
     
     simulator = ParticleSimulator(particles)
 
+    # The thing we want to do a benchmark
     benchmark(simulator.evolve(0.1))
     
     # De-structure the list
