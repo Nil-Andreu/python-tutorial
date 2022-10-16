@@ -1,6 +1,6 @@
 from main import Particle, ParticleSimulator
 
-def test_evolve():
+def test_evolve(benchmark):
     particles = [
         Particle(0.3, 0.5, 1),
         Particle(0.0, -0.5, -1),
@@ -8,6 +8,8 @@ def test_evolve():
     ]
     
     simulator = ParticleSimulator(particles)
+
+    benchmark(simulator.evolve(0.1))
     
     # De-structure the list
     p0, p1, p2 = particles
@@ -23,7 +25,3 @@ def test_evolve():
     
     assert fequal(p2.x, 0.191358)
     assert fequal(p2.y, -0.365227)
-
-
-if __name__ == '__main__':
-    test_evolve()
