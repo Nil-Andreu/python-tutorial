@@ -59,6 +59,8 @@ You could also warap a section of code:
     pr.print_stats()    # print the stats of profiling
 ```
 
+We have this inside of the *profiler.py* file.
+
 - Interactively in IPython (notebook):
 ```
     %prun function()
